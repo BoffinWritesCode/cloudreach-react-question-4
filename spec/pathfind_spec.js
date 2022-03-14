@@ -53,7 +53,7 @@ describe('Pathfind', () => {
         expect(() => pathfind(A, P, Q)).toThrow();
     })
 
-    // test case for no map data at all
+    // test case for different row lengths
     it ('different row lengths', () => {
         const A = [
             [true, true, true, true, true],
