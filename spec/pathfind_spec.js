@@ -8,7 +8,9 @@ const { pathfind } = require('../pathfind')
 //   Is it never overkill?
 // - Should I be writing even more tests for every single function that I
 //   write in order to facilitate the pathfind function? In this example,
-//   "isCoordinateValid"? Should I write tests that check that too?  
+//   "isCoordinateValid"? Should I write tests that check that too?
+// - How often should you commit? I tend to commit whenever I take a second
+//   to pause and stretch or take break or read documentation etc.
 
 describe('Pathfind', () => {
     const validMap = [
