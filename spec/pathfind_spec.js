@@ -42,7 +42,7 @@ describe('Pathfind', () => {
         ]
         const P = [0, 0];
         const Q = [2, 3];
-        expect(pathfind(A, P, Q)).toThrow();
+        expect(() => pathfind(A, P, Q)).toThrow();
     })
 
     // test case for no map data at all
@@ -50,7 +50,7 @@ describe('Pathfind', () => {
         const A = [[], [], [], [], []]
         const P = [0, 0];
         const Q = [2, 3];
-        expect(pathfind(A, P, Q)).toThrow();
+        expect(() => pathfind(A, P, Q)).toThrow();
     })
 
     // test case for no map data at all
@@ -64,20 +64,20 @@ describe('Pathfind', () => {
         ]
         const P = [0, 0];
         const Q = [2, 3];
-        expect(pathfind(A, P, Q)).toThrow();
+        expect(() => pathfind(A, P, Q)).toThrow();
     })
 
     // test case for invalid coords
     // nested for the sake of similar tests
     describe ('coordinate arrays having length of', () => {
         it('0', () => {
-            expect(pathfind(validMap, [], [])).toThrow();
+            expect(() => pathfind(validMap, [], [])).toThrow();
         })
         it('1', () => {
-            expect(pathfind(validMap, [1], [4])).toThrow();
+            expect(() => pathfind(validMap, [1], [4])).toThrow();
         })
         it('3', () => {
-            expect(pathfind(validMap, [2, 2, 3], [2, 1, 4])).toThrow();
+            expect(() => pathfind(validMap, [2, 2, 3], [2, 1, 4])).toThrow();
         })
     })
 
@@ -85,6 +85,6 @@ describe('Pathfind', () => {
     it ('coordinates out of bounds', () => {
         const P = [-1, -1];
         const Q = [6, 6];
-        expect(pathfind(validMap, P, Q)).toThrow();
+        expect(() => pathfind(validMap, P, Q)).toThrow();
     });
 })
