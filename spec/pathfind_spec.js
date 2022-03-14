@@ -1,31 +1,44 @@
-const {pathfind} = require('../pathfind')
+const { pathfind } = require('../pathfind')
 
 describe('Pathfind', () => {
-  it('start and end the same', () => {
-    const A = [
-      [true, true, true, true, true],
-      [true, false, false, false, true],
-      [true, true, true, true, true],
-      [true, true, true, true, true],
-      [true, true, true, true, true]
-    ]
-    const P = [0, 0]
-    const Q = [0, 0]
-    expect(pathfind(A, P, Q)).toBe(0)
-  })
+    it('start and end the same', () => {
+        const A = [
+            [true, true, true, true, true],
+            [true, false, false, false, true],
+            [true, true, true, true, true],
+            [true, true, true, true, true],
+            [true, true, true, true, true]
+        ]
+        const P = [0, 0]
+        const Q = [0, 0]
+        expect(pathfind(A, P, Q)).toBe(0)
+    })
 
-  it('example case', () => {
-    const A = [
-      [true, true, true, true, true],
-      [true, false, false, false, true],
-      [true, true, true, true, true],
-      [true, true, true, true, true],
-      [true, true, true, true, true]
-    ]
-    const P = [1, 0]
-    const Q = [2, 3]
-    expect(pathfind(A, P, Q)).toBe(6)
-  })
+    it('example case', () => {
+        const A = [
+            [true, true, true, true, true],
+            [true, false, false, false, true],
+            [true, true, true, true, true],
+            [true, true, true, true, true],
+            [true, true, true, true, true]
+        ]
+        const P = [1, 0]
+        const Q = [2, 3]
+        expect(pathfind(A, P, Q)).toBe(6)
+    })
 
-  // You can add further tests here
+    // test case for no available path
+    // in my implementation, I'm having the function return -1.
+    it('no available path', () => {
+        const A = [
+            [true, true, true, true, true],
+            [false, false, false, false, false],
+            [true, true, true, true, true],
+            [true, true, true, true, true],
+            [true, true, true, true, true]
+        ]
+        const P = [0, 0];
+        const Q = [2, 3];
+        expect(pathfind(A, P, Q)).toBe(-1);
+    })
 })
