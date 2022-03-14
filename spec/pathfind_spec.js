@@ -1,5 +1,15 @@
 const { pathfind } = require('../pathfind')
 
+// Questions I'd like to ask if I can:
+// - Is it sensible to write tests for *every* conceivable wrong-doing?
+//   For example, writing a test for what the pathfind function should do
+//   when the first coordinate argument passed in is a string or some other
+//   invalid object type? pathfind(A, P, 'Q')? Or is that overkill?
+//   Is it never overkill?
+// - Should I be writing even more tests for every single function that I
+//   write in order to facilitate the pathfind function? In this example,
+//   "isCoordinateValid"? Should I write tests that check that too?  
+
 describe('Pathfind', () => {
     const validMap = [
         [true, true, true, true, true],
@@ -38,6 +48,20 @@ describe('Pathfind', () => {
     // test case for no map data at all
     it ('empty map', () => {
         const A = [[], [], [], [], []]
+        const P = [0, 0];
+        const Q = [2, 3];
+        expect(pathfind(A, P, Q)).toThrow();
+    })
+
+    // test case for no map data at all
+    it ('different row lengths', () => {
+        const A = [
+            [true, true, true, true, true],
+            [true, false, false, false, true],
+            [true, true, true, true, true],
+            [true, true, true, true],
+            [true, true, true, true, true]
+        ]
         const P = [0, 0];
         const Q = [2, 3];
         expect(pathfind(A, P, Q)).toThrow();
