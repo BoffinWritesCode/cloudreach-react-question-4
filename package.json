@@ -1,0 +1,14 @@
+{
+  "name": "question4",
+  "version": "1.0.0",
+  "description": "",
+  "main": "pathfind.js",
+  "scripts": {
+    "test": "jasmine"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jasmine": "^3.3.1"
+  }
+}
