@@ -87,4 +87,11 @@ describe('Pathfind', () => {
         const Q = [6, 6];
         expect(() => pathfind(validMap, P, Q)).toThrow();
     });
+
+    // test case for start/end coords that are within a wall
+    it ('coordinates in walls', () => {
+        const P = [1, 1];
+        const Q = [3, 1];
+        expect(() => pathfind(validMap, P, Q)).toThrow();
+    });
 })
